@@ -10,7 +10,7 @@ const fetcher: Fetcher<Status[]> = async (...args: Parameters<typeof fetch>) => 
 }
 
 function useStatuses(size: number | undefined) {
-  const { data, error, isValidating, mutate } = useSWR(size ? `/api/status?size=${size}` : null, fetcher, {
+  const { data, error, isValidating, mutate } = useSWR(size ? `/api/status?size=${size}` : `/api/status?size=90`, fetcher, {
     refreshInterval: 1000 * 60,
     revalidateOnMount: true,
   })
