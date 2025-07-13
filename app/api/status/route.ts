@@ -1,7 +1,7 @@
 import type { NextRequest } from 'next/server'
 import { getStatuses } from '@/lib/getStatuses'
 
-export const runtime = 'edge'
+export const runtime = 'node' // it can't be edge because of the fetch call
 
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#fetchcache
 export const fetchCache = 'only-no-store'
